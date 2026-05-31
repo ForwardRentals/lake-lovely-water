@@ -1,0 +1,1111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lake Lovely Water &mdash; A Sea to Sky Trails</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A field guide to Lake Lovely Water in the Tantalus Range, west of the Squamish River. The two ways in, the hut, the season, and the honest logistics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f5f1ea;
+    --paper-deep: #ece6db;
+    --ink: #1c1917;
+    --ink-soft: #3f3a33;
+    --ink-mute: #7a7268;
+    --rule: #cdc6b8;
+    --moss: #2b3a2b;
+    --rust: #8a4a2c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper); color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    font-size: 17.5px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(28,25,23,0.025) 1px, transparent 1px);
+    background-size: 3px 3px;
+    z-index: 1;
+    opacity: 0.6;
+  }
+  ::selection { background: var(--ink); color: var(--paper); }
+
+  a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); transition: border-color 0.2s; }
+  a:hover { border-bottom-color: var(--ink); }
+
+  h1, h2, h3, h4, .display {
+    font-family: "Fraunces", "Times New Roman", serif;
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin: 0;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  h1 { font-size: clamp(3.5rem, 9.5vw, 7.5rem); font-weight: 400; letter-spacing: -0.028em; }
+  h2 { font-size: clamp(2.15rem, 4.8vw, 3.5rem); font-weight: 400; letter-spacing: -0.025em; }
+  h3 { font-size: 1.55rem; font-weight: 500; line-height: 1.22; letter-spacing: -0.012em; }
+  h4 { font-size: 1.1rem; font-weight: 500; }
+
+  em, .italic { font-style: italic; font-weight: 400; }
+
+  p { margin: 0 0 1.15rem; color: var(--ink-soft); font-size: 1.075rem; line-height: 1.72; }
+  p.lead {
+    font-family: "Fraunces", serif;
+    font-size: clamp(1.4rem, 2.3vw, 1.8rem);
+    line-height: 1.45;
+    color: var(--ink);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 2rem;
+  }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 2.25rem; }
+  .wrap-narrow { max-width: 760px; margin: 0 auto; padding: 0 2.25rem; }
+
+  /* ---------- LINE LABELS ---------- */
+  .eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink-mute);
+    display: inline-flex; align-items: center; gap: 0.8rem;
+  }
+  .eyebrow::before {
+    content: ""; width: 28px; height: 1px; background: var(--ink-mute);
+  }
+  .roman {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink-mute);
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* ---------- NAV ---------- */
+  nav.top {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(245,241,234,0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.top .inner {
+    max-width: 1240px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 2.25rem;
+  }
+  .mark {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-family: "Fraunces", serif;
+    font-size: 1.05rem; font-weight: 500;
+    color: var(--ink);
+    border: none;
+  }
+  .mark svg { color: var(--ink); }
+  .mark-text { line-height: 1; }
+  .mark-text small { display: block; font-family: "Inter", sans-serif; font-weight: 400; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); margin-top: 0.15rem; }
+  nav.top .links { display: flex; gap: 2rem; }
+  nav.top .links a {
+    font-family: "Inter", sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: none;
+    color: var(--ink-soft);
+  }
+  nav.top .links a:hover { color: var(--ink); }
+  @media (max-width: 680px) {
+    nav.top .links { display: none; }
+  }
+
+  /* ---------- COORD RIBBON ---------- */
+  .coords {
+    background: var(--paper-deep);
+    border-bottom: 1px solid var(--rule);
+    font-family: "Inter", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink-mute);
+    padding: 0.55rem 0;
+  }
+  .coords .inner {
+    max-width: 1240px; margin: 0 auto;
+    display: flex; justify-content: space-between; gap: 2rem;
+    padding: 0 2.25rem; flex-wrap: wrap;
+  }
+  .coords span + span { color: var(--ink-soft); }
+
+  /* ---------- HERO ---------- */
+  header.hero {
+    padding: 7rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header.hero .wrap { position: relative; z-index: 2; }
+  header.hero .eyebrow { margin-bottom: 3rem; }
+  header.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+      radial-gradient(ellipse 800px 240px at 50% 60%, transparent 30%, rgba(28,25,23,0.04) 31%, transparent 32%),
+      radial-gradient(ellipse 1000px 300px at 50% 60%, transparent 35%, rgba(28,25,23,0.03) 36%, transparent 37%),
+      radial-gradient(ellipse 1200px 360px at 50% 60%, transparent 40%, rgba(28,25,23,0.025) 41%, transparent 42%),
+      radial-gradient(ellipse 1400px 420px at 50% 60%, transparent 45%, rgba(28,25,23,0.02) 46%, transparent 47%);
+    pointer-events: none;
+  }
+  header.hero h1 {
+    max-width: 14ch;
+    margin-bottom: 2rem;
+  }
+  header.hero h1 em { color: var(--moss); }
+  header.hero .deck {
+    max-width: 56ch;
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4rem;
+  }
+  header.hero .meta {
+    display: flex; flex-wrap: wrap; gap: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+  header.hero .meta .item .label {
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-mute); font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+  header.hero .meta .item .value {
+    font-family: "Fraunces", serif; font-weight: 400; font-size: 1.05rem;
+    color: var(--ink);
+  }
+
+  /* ---------- HERO ART (reflection) ---------- */
+  .reflection {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 360px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.95;
+  }
+  .reflection svg { width: 100%; height: 100%; display: block; }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 7rem 0; position: relative; }
+  section.tight { padding: 5rem 0; }
+  .rule { height: 1px; background: var(--rule); border: 0; margin: 0; }
+
+  .section-head { max-width: 720px; margin-bottom: 4rem; }
+  .section-head .eyebrow { margin-bottom: 1.5rem; }
+  .section-head h2 { margin-bottom: 1.25rem; }
+
+  /* ---------- IDEA ---------- */
+  .idea-grid {
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start;
+  }
+  @media (max-width: 900px) { .idea-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+  .idea-art {
+    aspect-ratio: 4/5;
+    background: var(--paper-deep);
+    display: grid; place-items: center;
+    color: var(--ink-soft);
+    border-radius: 2px;
+  }
+  .idea-art svg { width: 78%; max-width: 320px; height: auto; }
+  .idea-body p:first-of-type::first-letter {
+    font-family: "Fraunces", serif;
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 0.85;
+    float: left;
+    padding: 0.4rem 0.7rem 0 0;
+    color: var(--ink);
+  }
+  blockquote.pull {
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 1.45rem;
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 300;
+  }
+  blockquote.pull cite {
+    display: block; margin-top: 1rem;
+    font-style: normal;
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-mute); font-weight: 500;
+  }
+
+  /* ---------- ACCESS (two ways in) ---------- */
+  .access { background: var(--paper-deep); }
+  .access-grid {
+    display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0;
+    align-items: stretch;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  @media (max-width: 900px) {
+    .access-grid { grid-template-columns: 1fr; }
+    .access-divider { display: none; }
+    .access-card + .access-card { border-top: 1px solid var(--rule); }
+  }
+  .access-divider { background: var(--rule); }
+  .access-card {
+    padding: 3rem 2.5rem;
+    display: flex; flex-direction: column;
+  }
+  .access-card .opt {
+    font-family: "Fraunces", serif; font-style: italic;
+    font-size: 0.95rem; color: var(--ink-mute);
+    letter-spacing: 0.04em; margin-bottom: 0.75rem;
+  }
+  .access-card h3 {
+    margin-bottom: 0.6rem;
+    font-size: 1.85rem; font-weight: 400; letter-spacing: -0.018em;
+  }
+  .access-card h3 em { color: var(--moss); }
+  .access-card .who {
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-mute); font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .access-card .art-strip {
+    height: 90px;
+    margin-bottom: 1.75rem;
+    display: flex; align-items: center;
+    color: var(--ink-soft);
+  }
+  .access-card .art-strip svg { width: 100%; max-width: 360px; height: 100%; }
+  .access-card p { margin-bottom: 1rem; }
+  .access-card .meta-row {
+    margin-top: 1.5rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .access-card .meta-row .label {
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-mute); font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+  .access-card .meta-row .value {
+    font-family: "Fraunces", serif; font-size: 1rem; color: var(--ink);
+  }
+  .access-card .cta { margin-top: auto; padding-top: 2rem; }
+
+  .pillish {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid var(--ink);
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 500; color: var(--ink);
+    border-radius: 999px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .pillish:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .pillish.muted {
+    border-color: var(--ink-mute); color: var(--ink-mute);
+    pointer-events: none;
+  }
+  .pillish.muted::after { content: " \2014 coming soon"; font-style: italic; text-transform: none; letter-spacing: 0.05em; }
+
+  /* ---------- HUT ---------- */
+  .hut-grid {
+    display: grid; grid-template-columns: 1.3fr 1fr; gap: 5rem; align-items: center;
+  }
+  @media (max-width: 900px) { .hut-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+  .hut-art {
+    aspect-ratio: 1/1;
+    background: var(--paper-deep);
+    display: grid; place-items: center;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    color: var(--ink-soft);
+  }
+  .hut-art svg { width: 70%; max-width: 320px; }
+  .hut ul.facts {
+    list-style: none; padding: 0; margin: 2rem 0 0;
+  }
+  .hut ul.facts li {
+    padding: 1rem 0;
+    border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: 160px 1fr; gap: 1.5rem;
+    align-items: baseline;
+  }
+  .hut ul.facts li:last-child { border-bottom: 1px solid var(--rule); }
+  .hut ul.facts li .k {
+    font-family: "Inter", sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-mute); font-weight: 500;
+  }
+  .hut ul.facts li .v {
+    font-family: "Fraunces", serif; font-size: 1.05rem; color: var(--ink);
+    font-weight: 400;
+  }
+
+  /* ---------- WHEN ---------- */
+  .when-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+    margin-top: 3rem;
+  }
+  @media (max-width: 900px) { .when-grid { grid-template-columns: 1fr 1fr; } }
+  .when-card {
+    padding: 1.5rem 0 0;
+    border-top: 1px solid var(--rule);
+  }
+  .when-card .month {
+    font-family: "Fraunces", serif; font-style: italic;
+    font-size: 1.1rem; color: var(--ink-mute);
+    margin-bottom: 0.5rem;
+  }
+  .when-card h4 {
+    font-family: "Fraunces", serif; font-size: 1.35rem; font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  .when-card p { font-size: 0.95rem; margin-bottom: 0; }
+
+  /* ---------- PACK ---------- */
+  .pack-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  }
+  @media (max-width: 900px) { .pack-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+  .pack-col h4 {
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-mute); font-weight: 500;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .pack-col h4 svg { color: var(--ink-soft); }
+  .pack-col ul { list-style: none; padding: 0; margin: 0; }
+  .pack-col ul li {
+    padding: 0.55rem 0;
+    font-family: "Inter", sans-serif;
+    font-size: 0.98rem; color: var(--ink-soft);
+    display: grid; grid-template-columns: 1.6rem 1fr; gap: 0.5rem;
+    align-items: baseline;
+  }
+  .pack-col ul li .n {
+    font-family: "Fraunces", serif; font-style: italic;
+    color: var(--ink-mute); font-size: 0.9rem;
+  }
+  .pack-col ul li em { color: var(--ink); font-style: italic; }
+
+  /* ---------- HONEST ---------- */
+  .honest { background: var(--paper-deep); }
+  .honest-list { display: flex; flex-direction: column; }
+  .honest-item {
+    display: grid; grid-template-columns: 80px 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--rule);
+    align-items: start;
+  }
+  .honest-item:last-child { border-bottom: 1px solid var(--rule); }
+  .honest-item .num {
+    font-family: "Fraunces", serif; font-style: italic;
+    font-size: 1rem; color: var(--ink-mute);
+  }
+  .honest-item h3 { margin-bottom: 0.6rem; }
+  .honest-item p { margin-bottom: 0; max-width: 62ch; }
+  @media (max-width: 680px) { .honest-item { grid-template-columns: 40px 1fr; gap: 1.25rem; } }
+
+  /* ---------- COLOPHON ---------- */
+  .colophon-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 3rem;
+  }
+  @media (max-width: 900px) { .colophon-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+  .colophon h4 {
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-mute); font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .colophon ul { list-style: none; padding: 0; margin: 0; }
+  .colophon ul li { margin-bottom: 0.5rem; font-size: 0.92rem; color: var(--ink-soft); }
+  .colophon ul li a { border: none; }
+  .colophon ul li a:hover { color: var(--ink); }
+
+  footer.foot {
+    padding: 3rem 0;
+    border-top: 1px solid var(--rule);
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+  }
+  footer.foot .inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;
+  }
+  footer.foot em { font-family: "Fraunces", serif; font-weight: 400; }
+
+  /* ---------- ART STYLES ---------- */
+  .line-art {
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav class="top">
+  <div class="inner">
+    <a href="https://seatoskytrails.com/" class="mark">
+      <svg width="36" height="28" viewBox="0 0 36 28" class="line-art" aria-hidden="true">
+        <path d="M2 24 L8 14 L13 19 L19 8 L25 17 L30 12 L34 22"/>
+        <path d="M2 26 L34 26"/>
+      </svg>
+      <span class="mark-text">
+        Lake Lovely Water
+        <small>An entry in the Sea to Sky Trails</small>
+      </span>
+    </a>
+    <div class="links">
+      <a href="#idea">The Idea</a>
+      <a href="#access">Access</a>
+      <a href="#hut">The Hut</a>
+      <a href="#when">Season</a>
+      <a href="#pack">The Pack</a>
+      <a href="#honest">Honest Talk</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== COORD RIBBON ===================== -->
+<div class="coords">
+  <div class="inner">
+    <span>49° 51′ N &nbsp;·&nbsp; 123° 14′ W</span>
+    <span>Tantalus Range &nbsp;·&nbsp; Entry No. 01</span>
+    <span>Best window: late Jul &mdash; first week Sep</span>
+    <span>1,175 m &nbsp;·&nbsp; west of the Squamish</span>
+  </div>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Tantalus Range &nbsp;·&nbsp; Sea to Sky</span>
+    <h1>Lake Lovely<br>Water, <em>plainly</em><br>named.</h1>
+    <p class="deck">A granite cirque at 1,175 metres, ringed by Pelops, Niobe and Tantalus itself. There is no road. You cross a river, you climb six and a half kilometres, and you arrive somewhere worth the trouble.</p>
+
+    <div class="meta">
+      <div class="item">
+        <div class="label">Elevation</div>
+        <div class="value">1,175 m</div>
+      </div>
+      <div class="item">
+        <div class="label">Distance one way</div>
+        <div class="value">6.5 km</div>
+      </div>
+      <div class="item">
+        <div class="label">Gain</div>
+        <div class="value">~1,300 m</div>
+      </div>
+      <div class="item">
+        <div class="label">Best season</div>
+        <div class="value">Late Jul &mdash; early Sep</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero illustration: Tantalus peaks reflected in the lake -->
+  <div class="reflection" aria-hidden="true">
+    <svg viewBox="0 0 1400 360" preserveAspectRatio="xMidYEnd slice">
+      <g class="line-art" stroke-width="1.2">
+        <!-- Distant softer ridge above -->
+        <path opacity="0.3" d="M0 145 L120 110 L210 130 L310 95 L420 125 L520 100 L640 130 L740 110 L860 135 L980 105 L1100 130 L1220 110 L1320 130 L1400 115"/>
+        <!-- Main jagged Tantalus peaks: Pelops, Niobe, Tantalus -->
+        <path d="M0 180
+                 L 90 165
+                 L 160 130
+                 L 220 95
+                 L 280 60
+                 L 340 95
+                 L 400 140
+                 L 470 110
+                 L 540 75
+                 L 600 40
+                 L 660 78
+                 L 720 115
+                 L 790 90
+                 L 860 55
+                 L 920 92
+                 L 985 130
+                 L 1050 105
+                 L 1120 70
+                 L 1180 110
+                 L 1240 150
+                 L 1310 130
+                 L 1400 165"/>
+        <!-- Snow detail on highest peaks -->
+        <path opacity="0.55" d="M260 80 L 280 60 L 300 80"/>
+        <path opacity="0.55" d="M580 60 L 600 40 L 620 60"/>
+        <path opacity="0.55" d="M840 75 L 860 55 L 880 75"/>
+        <path opacity="0.55" d="M1100 90 L 1120 70 L 1140 90"/>
+
+        <!-- Waterline -->
+        <path d="M0 200 L1400 200"/>
+
+        <!-- Mirror reflection of peaks (fainter) -->
+        <g opacity="0.42">
+          <path d="M0 220
+                   L 90 235
+                   L 160 270
+                   L 220 305
+                   L 280 340
+                   L 340 305
+                   L 400 260
+                   L 470 290
+                   L 540 325
+                   L 600 360
+                   L 660 322
+                   L 720 285
+                   L 790 310
+                   L 860 345
+                   L 920 308
+                   L 985 270
+                   L 1050 295
+                   L 1120 330
+                   L 1180 290
+                   L 1240 250
+                   L 1310 270
+                   L 1400 235"/>
+        </g>
+        <!-- Horizontal ripple lines breaking the reflection -->
+        <path opacity="0.5" d="M40 215 L 230 215 M 300 215 L 540 215 M 620 215 L 880 215 M 950 215 L 1180 215 M 1250 215 L 1400 215"/>
+        <path opacity="0.35" d="M0 245 L 180 245 M 260 245 L 460 245 M 540 245 L 760 245 M 840 245 L 1060 245 M 1140 245 L 1400 245"/>
+        <path opacity="0.22" d="M80 280 L 360 280 M 440 280 L 700 280 M 780 280 L 1040 280 M 1120 280 L 1360 280"/>
+
+        <!-- Tiny canoe on the water -->
+        <g transform="translate(420 198)">
+          <path d="M-18 0 Q0 5 18 0"/>
+          <path d="M-18 0 Q0 2.5 18 0"/>
+          <line x1="-2" y1="-3" x2="-2" y2="-10"/>
+          <circle cx="-2" cy="-13" r="1.6"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<hr class="rule" />
+
+<!-- ===================== IDEA ===================== -->
+<section id="idea" class="idea">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">§ I &nbsp;·&nbsp; The Idea</span>
+      <h2>An alpine lake you cannot drive to.</h2>
+    </div>
+
+    <div class="idea-grid">
+      <div class="idea-art">
+        <!-- Lone alpine firs against a sharp peak -->
+        <svg viewBox="0 0 220 280" class="line-art" aria-hidden="true">
+          <path opacity="0.5" d="M10 200 L 60 130 L 95 165 L 135 90 L 175 150 L 210 120"/>
+          <path opacity="0.6" d="M120 110 L 135 90 L 150 110"/>
+          <g transform="translate(110 70)">
+            <path d="M0 180 L 0 10"/>
+            <path d="M-22 170 L 0 145 L 22 170"/>
+            <path d="M-20 145 L 0 120 L 20 145"/>
+            <path d="M-18 120 L 0 95 L 18 120"/>
+            <path d="M-15 95 L 0 70 L 15 95"/>
+            <path d="M-12 70 L 0 45 L 12 70"/>
+            <path d="M-9 45 L 0 20 L 9 45"/>
+          </g>
+          <g transform="translate(40 130)">
+            <path d="M0 120 L 0 15"/>
+            <path d="M-12 110 L 0 92 L 12 110"/>
+            <path d="M-10 90 L 0 70 L 10 90"/>
+            <path d="M-8 70 L 0 50 L 8 70"/>
+            <path d="M-6 50 L 0 30 L 6 50"/>
+          </g>
+          <g transform="translate(180 145)">
+            <path d="M0 105 L 0 25"/>
+            <path d="M-10 95 L 0 80 L 10 95"/>
+            <path d="M-8 78 L 0 60 L 8 78"/>
+            <path d="M-7 58 L 0 42 L 7 58"/>
+          </g>
+          <path d="M0 252 L 220 252"/>
+          <path d="M0 260 L 220 260" opacity="0.45"/>
+        </svg>
+      </div>
+
+      <div class="idea-body">
+        <p>Lake Lovely Water sits in a cirque on the west side of the Squamish River, a shelf of pale water held in a bowl of Tantalus granite. The peaks above it &mdash; Pelops, Niobe, and Tantalus Mountain &mdash; are the sort of shapes you point at from the highway and assume someone else gets to climb. The lake at their feet is small, cold, and clear enough that the bottom looks closer than it is.</p>
+
+        <p>There is no road. The trailhead is on the far bank of a fast, glacial river, which means every trip here begins with a water crossing &mdash; by canoe, by raft, by jet boat, by whatever you can responsibly get across in. From the west bank it is a steady 6.5 kilometres and roughly 1,300 metres up to the lake, through old growth and over slabs polished by ice that left a long time ago. Four to six hours, if you are fit and the day is on your side.</p>
+
+        <blockquote class="pull">
+          &ldquo;You can see the Tantalus from the Sea to Sky Highway every day of your life and never once stand at the foot of it. Most people don&rsquo;t. That&rsquo;s the point of the place.&rdquo;
+          <cite>Field notes, late summer</cite>
+        </blockquote>
+
+        <p>It is a destination in the strict sense: nobody passes through Lake Lovely Water on the way to somewhere else. You go because you wanted to be there, and because you were willing to do what it asks of you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ===================== ACCESS ===================== -->
+<section id="access" class="access">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">§ II &nbsp;·&nbsp; The Two Ways In</span>
+      <h2>The river is the gate. Choose how you cross it.</h2>
+      <p class="lead" style="margin-top:1.5rem;color:var(--ink-soft);">There are essentially two ways to the west-bank trailhead. Neither is wrong. They are different trips for different parties.</p>
+    </div>
+
+    <div class="access-grid">
+
+      <div class="access-card">
+        <div class="opt">Option One</div>
+        <h3>Paddle the <em>river</em> yourself.</h3>
+        <div class="who">For experienced moving-water paddlers</div>
+
+        <div class="art-strip">
+          <svg viewBox="0 0 360 90" class="line-art" aria-hidden="true">
+            <g opacity="0.6">
+              <path d="M10 50 L 10 22"/>
+              <path d="M3 42 L 10 30 L 17 42"/>
+              <path d="M25 52 L 25 28"/>
+              <path d="M18 44 L 25 34 L 32 44"/>
+              <path d="M42 50 L 42 24"/>
+              <path d="M35 42 L 42 30 L 49 42"/>
+            </g>
+            <path d="M0 60 Q90 56 180 60 T360 60"/>
+            <path d="M0 72 Q90 68 180 72 T360 72" opacity="0.55"/>
+            <path d="M0 82 Q90 78 180 82 T360 82" opacity="0.35"/>
+            <g transform="translate(220 64)">
+              <path d="M-26 0 Q0 7 26 0"/>
+              <path d="M-26 0 Q0 3 26 0"/>
+              <circle cx="-4" cy="-7" r="2.2"/>
+              <line x1="-4" y1="-5" x2="-4" y2="0"/>
+              <line x1="-18" y1="-3" x2="10" y2="6"/>
+            </g>
+            <path d="M300 58 L 355 62" opacity="0.7"/>
+            <path d="M312 56 L 318 50 M 330 58 L 336 52" opacity="0.5"/>
+          </svg>
+        </div>
+
+        <p>Put in on the east bank near the mouth of Sigurd Creek, ferry across the Squamish River, find the trail on the far side, and climb. This is the traditional way in &mdash; the way people have done it since the hut went up. Done right, it is the more satisfying trip.</p>
+
+        <p>Done wrong, it is unforgiving. The Squamish runs fast and cold off the icefields. Sweepers along the banks have killed strong paddlers. If you have not paddled real moving water before, this is not the river to learn on.</p>
+
+        <p>A note on land: the trail begins on private property. Hikers are asked, as a courtesy, to contact the Sḵwx̱wú7mesh (Squamish) Nation band office before crossing.</p>
+
+        <div class="meta-row">
+          <div>
+            <div class="label">Skill</div>
+            <div class="value">Class I+ moving water</div>
+          </div>
+          <div>
+            <div class="label">Best for</div>
+            <div class="value">Self-sufficient parties</div>
+          </div>
+        </div>
+
+        <div class="cta">
+          <a href="https://squamishcanoerental.com/canoe-delivery-squamish/" class="pillish">Canoe &amp; raft delivery &mdash; Squamish Canoe Rental</a>
+        </div>
+      </div>
+
+      <div class="access-divider" aria-hidden="true"></div>
+
+      <div class="access-card">
+        <div class="opt">Option Two</div>
+        <h3>Take the <em>jet boat</em> across.</h3>
+        <div class="who">For most parties, most of the time</div>
+
+        <div class="art-strip">
+          <svg viewBox="0 0 360 90" class="line-art" aria-hidden="true">
+            <g opacity="0.6">
+              <path d="M280 55 L 290 30 L 300 45 L 315 22 L 330 38 L 350 28"/>
+            </g>
+            <path d="M0 60 Q90 56 180 60 T360 60"/>
+            <path d="M0 72 Q90 68 180 72 T360 72" opacity="0.55"/>
+            <path d="M0 82 Q90 78 180 82 T360 82" opacity="0.35"/>
+            <g transform="translate(160 60)">
+              <path d="M-32 0 L -28 -10 L 28 -10 L 34 -2 L 30 4 L -30 4 Z"/>
+              <line x1="-18" y1="-10" x2="-18" y2="-18"/>
+              <line x1="18" y1="-10" x2="18" y2="-18"/>
+              <path d="M-18 -18 L 18 -18"/>
+              <path d="M-60 6 Q -45 0 -32 4" opacity="0.6"/>
+              <path d="M-78 10 Q -55 4 -40 8" opacity="0.4"/>
+            </g>
+          </svg>
+        </div>
+
+        <p><strong>Squamish Jet Boat Journeys</strong> runs a chauffeured shuttle across the river to the west-bank trailhead. It removes the river from the equation: no ferry angles, no scout, no swim. You step off at the trail and start climbing.</p>
+
+        <p>This is the better choice for parties carrying heavy climbing gear, for sore knees, for partners who don&rsquo;t love whitewater, and for anyone who hasn&rsquo;t spent a season on moving water. It is also, frankly, what most parties going up for the hut should do.</p>
+
+        <p>Pickups can usually be arranged for the way out, so you don&rsquo;t come down on the last day to find your boat gone.</p>
+
+        <div class="meta-row">
+          <div>
+            <div class="label">Skill</div>
+            <div class="value">None required</div>
+          </div>
+          <div>
+            <div class="label">Best for</div>
+            <div class="value">Hut trips, mixed parties</div>
+          </div>
+        </div>
+
+        <div class="cta">
+          <a href="#" class="pillish muted">Book the Squamish Jet Boat shuttle</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ===================== HUT ===================== -->
+<section id="hut" class="hut">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">§ III &nbsp;·&nbsp; The Hut</span>
+      <h2>Tantalus Hut, 1961.</h2>
+    </div>
+
+    <div class="hut-grid">
+      <div>
+        <p>The Alpine Club of Canada&rsquo;s Vancouver Section built the hut in 1961, on a small bench above the lake. It sleeps sixteen, has a kitchen with mismatched mugs that have outlasted three generations of guidebook authors, a wood stove, propane burners, and a small dock with a single boat tied to it most summers.</p>
+
+        <p>Bookings are member-only and run through ACC Vancouver. The hut is booked whole &mdash; you and your party have it, or another party does &mdash; in three-night blocks running Friday to Sunday or Monday to Wednesday. That structure is part of what keeps the place quiet: there is no walk-up traffic, no day-trippers, no scramble for a bunk. Just whoever managed to put a group together and a calendar slot.</p>
+
+        <p>On a clear night the lake settles like glass and the granite goes pink, then grey, then dark. Inside, the stove is on, somebody is making pasta, and somebody else is reading the cabin log. It is a small, unfussy place, and people remember their nights there for the rest of their lives.</p>
+
+        <ul class="facts">
+          <li><span class="k">Built</span><span class="v">1961, ACC Vancouver Section</span></li>
+          <li><span class="k">Capacity</span><span class="v">16, shared bunks</span></li>
+          <li><span class="k">Cooking</span><span class="v">Propane burners &amp; wood stove</span></li>
+          <li><span class="k">Bookings</span><span class="v">Whole-hut, 3-night blocks</span></li>
+          <li><span class="k">Access</span><span class="v">ACC Vancouver members</span></li>
+          <li><span class="k">Season</span><span class="v">Roughly June &mdash; September</span></li>
+        </ul>
+
+        <a href="https://accvancouver.ca/" class="pillish" style="margin-top:2rem;">Booking &amp; current rates &mdash; accvancouver.ca</a>
+      </div>
+
+      <div class="hut-art">
+        <svg viewBox="0 0 320 320" class="line-art" aria-hidden="true">
+          <!-- Peak behind -->
+          <path opacity="0.5" d="M10 180 L 80 90 L 130 140 L 195 60 L 260 130 L 310 100"/>
+          <path opacity="0.55" d="M180 75 L 195 60 L 210 75"/>
+
+          <!-- Cabin -->
+          <g transform="translate(85 155)">
+            <path d="M0 60 L 75 0 L 150 60"/>
+            <path d="M10 60 L 10 120 L 140 120 L 140 60"/>
+            <path d="M62 120 L 62 90 L 88 90 L 88 120"/>
+            <path d="M22 80 L 50 80 L 50 102 L 22 102 Z"/>
+            <path d="M36 80 L 36 102 M 22 91 L 50 91" opacity="0.5"/>
+            <path d="M100 80 L 128 80 L 128 102 L 100 102 Z"/>
+            <path d="M114 80 L 114 102 M 100 91 L 128 91" opacity="0.5"/>
+            <path d="M105 25 L 105 5 L 120 5 L 120 35"/>
+            <path d="M112 -2 Q 118 -10 112 -16 Q 106 -22 112 -28" opacity="0.45"/>
+          </g>
+
+          <!-- Ground / dock -->
+          <path d="M0 290 L 320 290"/>
+          <path d="M0 300 L 320 300" opacity="0.5"/>
+          <path d="M200 290 L 270 295 L 270 305 L 200 300 Z" opacity="0.7"/>
+
+          <!-- Flanking fir -->
+          <g transform="translate(40 215)">
+            <path d="M0 75 L 0 5"/>
+            <path d="M-10 60 L 0 45 L 10 60"/>
+            <path d="M-8 42 L 0 28 L 8 42"/>
+            <path d="M-6 25 L 0 12 L 6 25"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ===================== WHEN ===================== -->
+<section id="when" class="when">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">§ IV &nbsp;·&nbsp; When To Go</span>
+      <h2>A short window, honestly described.</h2>
+      <p class="lead" style="margin-top:1.5rem;color:var(--ink-soft);">The usable season is roughly six weeks. Snow lingers earlier than people think; weather closes the door earlier than people hope.</p>
+    </div>
+
+    <div class="when-grid">
+      <div class="when-card">
+        <div class="month">June &mdash; mid-July</div>
+        <h4>Snow on the upper trail.</h4>
+        <p>Lower switchbacks are mud and meltwater. The bowl above can hold snow well into July. Beautiful, and possible, with axe and crampons and a real forecast.</p>
+      </div>
+      <div class="when-card">
+        <div class="month">Late July &mdash; August</div>
+        <h4>The honest window.</h4>
+        <p>Trail is dry, water is open, peaks are climbable. Mid-week is calmer than the weekend. This is when to go.</p>
+      </div>
+      <div class="when-card">
+        <div class="month">First week of September</div>
+        <h4>Quietest, sharpest light.</h4>
+        <p>Bugs have given up, smoke usually clears, water is glassy in the mornings. Nights at the lake near freezing. Bring a warmer bag than you think you need.</p>
+      </div>
+      <div class="when-card">
+        <div class="month">Mid-September on</div>
+        <h4>The door closes.</h4>
+        <p>First serious system can put fresh snow on the peaks overnight. River levels swing on rainfall. Wait until next year unless you really know what you&rsquo;re reading.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ===================== PACK ===================== -->
+<section id="pack" class="pack">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">§ V &nbsp;·&nbsp; The Pack</span>
+      <h2>What goes in the bag.</h2>
+      <p class="lead" style="margin-top:1.5rem;color:var(--ink-soft);">Pack for a real alpine hut trip, not a campground weekend. The hut covers shelter and a stove; everything else is on you.</p>
+    </div>
+
+    <div class="pack-grid">
+      <div class="pack-col">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 20 20" class="line-art" aria-hidden="true">
+            <path d="M6 18 L 6 6 Q 6 2 10 2 Q 14 2 14 6 L 14 18 Z"/>
+            <path d="M8 5 L 12 5"/>
+          </svg>
+          Worn &amp; carried
+        </h4>
+        <ul>
+          <li><span class="n">i.</span><span><em>Real boots.</em> Stiff enough for talus. Broken in.</span></li>
+          <li><span class="n">ii.</span><span>Rain shell that has actually been waterproofed this season.</span></li>
+          <li><span class="n">iii.</span><span>Insulated mid-layer &mdash; even in August, even on a forecast day.</span></li>
+          <li><span class="n">iv.</span><span>Trekking poles. The descent is the part that breaks people.</span></li>
+          <li><span class="n">v.</span><span>50&ndash;65 L pack with a real hip belt.</span></li>
+        </ul>
+      </div>
+
+      <div class="pack-col">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 20 20" class="line-art" aria-hidden="true">
+            <path d="M4 8 L 10 3 L 16 8"/>
+            <path d="M5 8 L 5 17 L 15 17 L 15 8"/>
+            <path d="M9 17 L 9 12 L 11 12 L 11 17"/>
+          </svg>
+          In the hut
+        </h4>
+        <ul>
+          <li><span class="n">i.</span><span>Sleeping bag rated lower than you&rsquo;d guess &mdash; the hut gets cold once the stove dies.</span></li>
+          <li><span class="n">ii.</span><span>Inflatable pad or liner; bunks are wood.</span></li>
+          <li><span class="n">iii.</span><span>Indoor shoes or thick socks. The floor is cold and gritty.</span></li>
+          <li><span class="n">iv.</span><span>Headlamp with fresh batteries. Spare batteries.</span></li>
+          <li><span class="n">v.</span><span>Food for every meal, plus one extra dinner. No resupply.</span></li>
+        </ul>
+      </div>
+
+      <div class="pack-col">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 20 20" class="line-art" aria-hidden="true">
+            <path d="M3 14 L 7 8 L 11 12 L 15 6 L 17 14"/>
+            <path d="M3 16 L 17 16"/>
+          </svg>
+          For the lake &amp; the ridge
+        </h4>
+        <ul>
+          <li><span class="n">i.</span><span>Map &amp; compass. A downloaded GPX is fine; rely on it alone at your risk.</span></li>
+          <li><span class="n">ii.</span><span>Sun hat, sunglasses, real sunscreen. The granite reflects everything back at you.</span></li>
+          <li><span class="n">iii.</span><span>Filter or chemical treatment. The lake is clear, not sterile.</span></li>
+          <li><span class="n">iv.</span><span>Light scrambling layer if you plan to wander up toward Pelops or Niobe.</span></li>
+          <li><span class="n">v.</span><span>Swim things. You will regret leaving them at home.</span></li>
+        </ul>
+      </div>
+
+      <div class="pack-col">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 20 20" class="line-art" aria-hidden="true">
+            <path d="M10 2 L 10 18 M 2 10 L 18 10"/>
+            <circle cx="10" cy="10" r="6"/>
+          </svg>
+          Safety &amp; small things
+        </h4>
+        <ul>
+          <li><span class="n">i.</span><span>Real first-aid kit, not a hotel-room one.</span></li>
+          <li><span class="n">ii.</span><span>Satellite messenger or PLB. There is no cell signal up there.</span></li>
+          <li><span class="n">iii.</span><span>Trip plan left with somebody who knows when to start worrying.</span></li>
+          <li><span class="n">iv.</span><span>Lighter and a spare. Matches in a dry bag.</span></li>
+          <li><span class="n">v.</span><span>Cash, in case the boat operator&rsquo;s card reader is having a day.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ===================== HONEST ===================== -->
+<section id="honest" class="honest">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">§ VI &nbsp;·&nbsp; Honest Talk</span>
+      <h2>What this trip actually asks of you.</h2>
+      <p class="lead" style="margin-top:1.5rem;color:var(--ink-soft);">We don&rsquo;t sell the mountains. They&rsquo;ve done their own marketing for a long time. These are the things people get wrong.</p>
+    </div>
+
+    <div class="honest-list">
+
+      <div class="honest-item">
+        <span class="num">i.</span>
+        <div>
+          <h3>The river is the river.</h3>
+          <p>The Squamish is fast, cold, and fed by ice. Sweepers along the banks have killed strong paddlers. If you are not a confident moving-water paddler, take the jet boat. Nobody at the hut will be impressed that you swam across; they&rsquo;ll be relieved you didn&rsquo;t.</p>
+        </div>
+      </div>
+
+      <div class="honest-item">
+        <span class="num">ii.</span>
+        <div>
+          <h3>The trail eats knees.</h3>
+          <p>Six and a half kilometres and roughly 1,300 metres of gain is steep by any measure. Going up is hard. Going down with a hut-weight pack, on tired legs, on roots and slabs, is what hurts. Poles are not optional for anyone with knee history. Budget more time for the descent than you think.</p>
+        </div>
+      </div>
+
+      <div class="honest-item">
+        <span class="num">iii.</span>
+        <div>
+          <h3>Alpine weather makes its own plans.</h3>
+          <p>The Tantalus catches systems coming off the coast and sits on them. A clear morning at the river can be a whiteout at the lake by mid-afternoon. Carry the layers. If the forecast goes sideways, the right answer is sometimes to stay put another night, not push out in cloud.</p>
+        </div>
+      </div>
+
+      <div class="honest-item">
+        <span class="num">iv.</span>
+        <div>
+          <h3>Bear country, the unromantic kind.</h3>
+          <p>Black bears use these valleys. Cook well away from the hut, store food properly inside, pack out everything, and don&rsquo;t leave snacks in your pack at the door. You will not see one most trips. That is the goal.</p>
+        </div>
+      </div>
+
+      <div class="honest-item">
+        <span class="num">v.</span>
+        <div>
+          <h3>No cell. Plan accordingly.</h3>
+          <p>There is no reception at the hut and very little along the trail. Carry a satellite messenger or PLB, leave a written trip plan with a person who will call SAR if you are overdue, and agree in advance on what overdue means. Don&rsquo;t assume someone else in the hut has a working device.</p>
+        </div>
+      </div>
+
+      <div class="honest-item">
+        <span class="num">vi.</span>
+        <div>
+          <h3>Leave it better than you found it.</h3>
+          <p>The hut works because three generations of users have treated it like theirs. Sweep when you leave. Pack out micro-trash. Write something kind in the log. And if you are paddling across the river, contact the Sḵwx̱wú7mesh (Squamish) Nation band office first &mdash; the trail begins on their land, and a phone call is a small courtesy for the privilege.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ===================== COLOPHON ===================== -->
+<section id="colophon" class="colophon tight">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">§ VII &nbsp;·&nbsp; Colophon</span>
+      <h2>Sources, thanks, &amp; corrections.</h2>
+    </div>
+
+    <div class="colophon-grid">
+      <div>
+        <h4>The Entry</h4>
+        <p style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.05rem;color:var(--ink);max-width:36ch;line-height:1.5;">
+          One of an ongoing series of long-form field guides to the Coast Mountains, published by the Sea to Sky Trails from the head of Howe Sound.
+        </p>
+      </div>
+      <div>
+        <h4>Read on</h4>
+        <ul>
+          <li><a href="#idea">The Idea</a></li>
+          <li><a href="#access">The Two Ways In</a></li>
+          <li><a href="#hut">The Hut</a></li>
+          <li><a href="#when">When To Go</a></li>
+          <li><a href="#pack">The Pack</a></li>
+          <li><a href="#honest">Honest Talk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get there</h4>
+        <ul>
+          <li><a href="https://squamishcanoerental.com/canoe-delivery-squamish/">Squamish Canoe Rental &mdash; delivery</a></li>
+          <li><a href="#">Squamish Jet Boat Journeys</a></li>
+          <li><a href="https://accvancouver.ca/">ACC Vancouver &mdash; hut bookings</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://seatoskytrails.com/">Sea to Sky Trails</a></li>
+          <li><a href="mailto:hello@seatoskytrails.com">Correct a fact</a></li>
+          <li><a href="mailto:hello@seatoskytrails.com">Pitch an entry</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap inner">
+    <div>
+      <em>Lake Lovely Water</em> &middot; An entry in the <a href="https://seatoskytrails.com/" style="border:none;text-decoration:underline;text-decoration-color:var(--rule);">Sea to Sky Trails</a> &middot; Published in Sḵwx̱wú7mesh territory.
+    </div>
+    <div>
+      &copy; 2026. Set in Fraunces &amp; Inter. Reader-funded.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
